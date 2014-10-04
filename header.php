@@ -39,8 +39,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
  	
 	<?php wp_head(); // wp_head hook for Plugins ~ always keep this just before the /head tag ?>
-	
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	</head>
 	<body>
