@@ -180,5 +180,25 @@
 // To REMOVE unused dashboard widgets you can uncomment the next line and customize /includes/remove.php
 // require_once('includes/remove.php');
 
+// Show posts on page shortcode
 
+function show_posts($atts){
+   extract(shortcode_atts(array(
+      'posts' => 3,
+   ), $atts));
+
+   //$return_string = '';
+   query_posts(array('orderby' => 'date', 'order' => 'DESC' , 'showposts' => $posts));
+   if (have_posts()) :
+      while (have_posts()) : the_post();
+         $return_string .= '<h2><a href="'.get_permalink().'">'.get_the_title().'</a></h2>';
+         $return_string .= get_the_content();
+      endwhile;
+   endif;
+   //$return_string .= '';
+
+   wp_reset_query();
+   return $return_string;
+}
+add_shortcode('showposts', 'show_posts');
 ?>

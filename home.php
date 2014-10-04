@@ -23,20 +23,27 @@ Template Name: home-template
   </div>
 </div>
 <i class="fa fa-chevron-circle-right fa-3x js-menu-trigger sliding-menu-button"></i>
-      
-    <article>
-      <p class="type">Home</p>
-      <a name="welcome"></a>
-      <h1>Welcome</h1>
-      <p><span>Lorem ipsum dolor sit amet</span>, consectetur adipisicing elit. Consequatur a, ullam, voluptatum incidunt neque doloremque vel inventore distinctio laudantium harum</a> illo quam nulla dolor alias iure impedit! Accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, a, ullam, voluptatum incidunt neque porro numquam doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit.
-        <a href="#" class="read-more">Read More <span>&rsaquo;</span></a>
-      </p>
-      <h2>Subheading lorem</h2>
-      <p class="date">July 07, 2014</p>
-      <p>Consequatur ullam, voluptatum incidunt neque porro numquam doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit. Accusamus. Consequatur, a, ullam, voluptatum incidunt neque porro numquam doloremque vel inventore distinctio laudantium harum illo quam nulla dolor alias iure impedit! Accusamus.</p>
-      <hr>
-      <p class="author">Author Name</p>
-    </article>
+  <?php /* The loop */ ?>
+      <?php while ( have_posts() ) : the_post(); ?>
+
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <header class="entry-header">
+            <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+            <div class="entry-thumbnail">
+              <?php the_post_thumbnail(); ?>
+            </div>
+            <?php endif; ?>
+
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+          </header><!-- .entry-header -->
+
+          <div class="entry-content">
+            <?php the_content(); ?>
+            <?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+          </div><!-- .entry-content -->
+
+        </article><!-- #post -->
+      <?php endwhile; ?>
 
 
 <!--END: Home Section-->
