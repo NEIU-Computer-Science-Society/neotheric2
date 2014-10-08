@@ -104,3 +104,20 @@ article.type-system-slab {
     font-family: $serif;
   }
 }
+
+  .panel {
+    background-color: #F5F4F4;
+    border: 1px #cccccc solid;
+    padding: 10px;
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: $base-font-size * 2;
+    }
+
+    ul {
+      padding-left: 15px;
+      list-style-type: circle;
+      margin-bottom: 10px;
+    }
+  }

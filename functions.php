@@ -184,21 +184,24 @@
 
 function show_posts($atts){
    extract(shortcode_atts(array(
-      'posts' => 3,
+      'num' => 1,
    ), $atts));
 
-   //$return_string = '';
-   query_posts(array('orderby' => 'date', 'order' => 'DESC' , 'showposts' => $posts));
+   $return_string = '';
+   query_posts(array('orderby' => 'date', 'order' => 'DESC' , 'showposts' => $num));
    if (have_posts()) :
       while (have_posts()) : the_post();
+         $return_string .= '<div class="panel">';
          $return_string .= '<h2><a href="'.get_permalink().'">'.get_the_title().'</a></h2>';
          $return_string .= get_the_content();
+         $return_string .= '</div>';
       endwhile;
    endif;
-   //$return_string .= '';
+   $return_string .= '</div>';
 
    wp_reset_query();
    return $return_string;
 }
 add_shortcode('showposts', 'show_posts');
+
 ?>

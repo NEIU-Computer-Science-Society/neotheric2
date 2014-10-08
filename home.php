@@ -39,7 +39,7 @@ Template Name: home-template
   <div class="modal-window">
     <div class="modal-inner">
       <label class="modal-close" for="modal-1"></label>
-        <h1 id="form_elements">Fieldsets and Form Elements</h1>
+        <h1 id="form_elements">Become A Member</h1>
 
   <fieldset>
     <form>   
@@ -70,7 +70,7 @@ Template Name: home-template
       <?php while ( have_posts() ) : the_post(); ?>
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <p class="title"><?php the_title(); ?></p>
+            <p class="type">Home</p>
           <header class="entry-header">
             <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
             <div class="entry-thumbnail">

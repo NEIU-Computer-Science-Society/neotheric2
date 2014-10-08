@@ -1,19 +1,6 @@
 <?php get_header(); ?>
 
-<!--BEGIN: sidebar~main-->
-<?php // to disable this sidebar on a page by page basis just add a custom field to your page or post of disableSidebar = true
-$disableSidebar = get_post_meta($post->ID, 'disableSidebar', $single = true);
-if ($disableSidebar !== 'true'): ?>
-
-<aside class="sidebar-main">
-	<h1>Main Sidebar</h1>
-	<?php dynamic_sidebar('sidebar-main'); ?>
-</aside>
-
-<?php endif; ?>
-<!--END: sidebar~main-->
-
-<div class="content-main clear-fix" role="main">
+<div class="content-main" role="main">
 	
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
@@ -43,6 +30,19 @@ if ($disableSidebar !== 'true'): ?>
 			
 	</article>
 	<!--END: Single Post-->
+
+	<!--BEGIN: sidebar~main-->
+<?php // to disable this sidebar on a page by page basis just add a custom field to your page or post of disableSidebar = true
+$disableSidebar = get_post_meta($post->ID, 'disableSidebar', $single = true);
+if ($disableSidebar !== 'true'): ?>
+
+<div class="sidebar-main">
+	
+	<?php dynamic_sidebar('sidebar-main'); ?>
+</div>
+
+<?php endif; ?>
+<!--END: sidebar~main-->
 
 	<?php wp_link_pages(); //this allows for multi-page posts ?>
 
