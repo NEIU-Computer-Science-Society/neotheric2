@@ -130,6 +130,10 @@ header.navigation {
     //padding-bottom: 3px;
   }
 
+  .current-menu-item a {
+    border-bottom: 3px solid #258dc8;
+  }
+
   // Sub menus
 
   li.more.nav-link {

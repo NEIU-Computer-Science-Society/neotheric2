@@ -46,33 +46,35 @@
 		<!-- Start of the Navigation Bar -->
 		<header class="navigation">
 		  <div class="navigation-wrapper">
-
 		    <a href="#" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
 		    <div class="nav">
 		      <ul id="navigation-menu">
+		      		<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+		        <!--
 		        <li class="nav-link"><a href="javascript:void(0)" class="current"><i class="fa fa-home"></i> Home</a></li>
 		        <li class="nav-link"><a href="javascript:void(0)"><i class="fa fa-info-circle"></i> About Us</a></li>
 		        <li class="nav-link"><a href="javascript:void(0)"><i class="fa fa-users"></i> Membership</a></li>
-		        <li class="nav-link more"><a href="javascript:void(0)"><i class="fa fa-calendar"></i> Events</a>
-		          <ul class="submenu">
-		            <li><a href="javascript:void(0)">Upcoming Events</a></li>
-		            <li><a href="javascript:void(0)">View Past Events</a></li>
-		          </ul>
-		        </li>
+		        <li class="nav-link"><a href="javascript:void(0)"><i class="fa fa-calendar"></i> Events</a>	</li>
 		        <li class="nav-link"><a href="#"><i class="fa fa-briefcase"></i> Resources</a></li>
 		        <li class="nav-link"><a href="#"><i class="fa fa-envelope-o"></i>  Contact Us</a></li>
+		    		-->
 		      </ul>
 		    </div>
 		    <div class="navigation-tools">
 		      <div class="search-bar">
 		        <div class="search-and-submit">
-		          <input type="search" placeholder="Enter Search" />
-		          <button type="submit">
-		            <img src="<?php bloginfo('template_url'); ?>/img/search-icon.png" alt="">
-		          </button>
+					 <?php get_search_form( true ); ?> 
+
+		        	<!--
+		        	<form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+				        <input type="search" placeholder="Enter Search" />
+				        <button type="submit">
+				        	<img src="<?php bloginfo('template_url'); ?>/img/search-icon.png" alt="">
+				        </button>
+		      		</form>
+		      	-->
 		        </div>
 		      </div>
-		     
 		    </div>
 		  </div>
 		</header>

@@ -204,4 +204,10 @@ function show_posts($atts){
 }
 add_shortcode('showposts', 'show_posts');
 
+// Add the header menu to the admin area
+function register_the_menu() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
+}
+add_action( 'init', 'register_the_menu' );
+
 ?>
