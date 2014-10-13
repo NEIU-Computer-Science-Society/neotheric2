@@ -96,6 +96,7 @@
             // modernizr
                 wp_register_script( 'modernizr', get_template_directory_uri().'/js/modernizr.custom.js',null,null,false); // keep the last argument as false which loads modernizr in the head
                 wp_enqueue_script( 'modernizr' );
+
         }
     }
     add_action('wp_enqueue_scripts', 'load_my_scripts_yo');

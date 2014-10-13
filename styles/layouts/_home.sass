@@ -4,9 +4,11 @@ html, body
 article
 	+outer-container
 	+row	
-	> *
 	+span-columns(8)
 	+shift(2)
+
+	header.page-title
+		margin-top: 5.5em
 
 	h1 
 		font-family: $serif
@@ -45,10 +47,15 @@ article
 		margin-bottom: .5em  
 
 	p.date 
-		color: transparentize($base-font-color, .6)
-		font-family: $serif
-		font-size: .8em
-		margin-bottom: .5em
+		color: transparentize($base-font-color, .2)
+		font-family: $sans-serif
+		font-size: .7em
+		padding: .1em 0
+		text-align: left
+		text-transform: uppercase
+
+		a
+			display: inline-block
 
 	p 
 		font-family: $serif
@@ -77,49 +84,16 @@ article
 	p.author 
 		font-family: $serif
 
+
+aside
+	+span-columns(3)
+	+omega
+
 .nav-link 
 	font-family: $sans-serif
 
 .faq
 	+outer-container
-
-.hero
-	background: url("http://www.bitnics.com/Example/img/serenity.jpg") no-repeat center center
-	-webkit-background-size: cover
-	-moz-background-size: cover
-	-o-background-size: cover
-	background-size: cover
-	min-height: 95%
-	padding-top: 5%
-
-.hero-copy
-	@include background(linear-gradient(black, $dark-gray) left repeat)
-	//background: -ms-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)
-	//background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%)
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='$dark-gray',GradientType=0 )
-	opacity: 0.9
-	border-radius: 5px
-	padding: 10px
-
-	h1
-		color: lighten($light-gray, 20)
-		font-size: 2.5em !important
-		text-shadow: 3px 3px black
-
-	p
-		font-size: 1.5em
-		text-shadow: 3px 3px black
-		
-		@include media($large-screen)
-			width: 80% !important
-			font-size: 1.5em
-	button
-		margin-bottom: 22px
-
-	.modal-inner
-		font-family: $serif
-		text-shadow: none
-    	
 
 .current
 	border-bottom: 3px solid  #258dc8
@@ -127,6 +101,15 @@ article
 .type 
 	border-bottom: 1px solid
 	display: inline-block
+	font-family: $sans-serif
+	font-size: .7em
+	font-weight: 600
+	margin-bottom: 2em
+	padding: .1em 0
+	text-align: left
+	text-transform: uppercase
+
+.type-no-underline 
 	font-family: $sans-serif
 	font-size: .7em
 	font-weight: 600

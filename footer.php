@@ -44,8 +44,15 @@
 
 		<!-- start of javascript -->
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<!-- code for modal -->
+		
+		<!-- code for searchbar -->
+		<script src="<?php bloginfo('template_directory');  ?>/js/classie.js"></script>
+		<script src="<?php bloginfo('template_directory');  ?>/js/uisearch.js"></script>
+		<script>
+			new UISearch( document.getElementById( 'sb-search' ) );
+		</script>
 
+		<!-- code for modal -->
 		<script>
 			$(document).ready(function() {
 			  var menu = $('#navigation-menu');

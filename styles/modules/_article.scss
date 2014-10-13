@@ -4,11 +4,12 @@ article.type-system-slab {
 
   @include clearfix();
   text-align: left;
+
   .type {
     border-bottom: 1px solid;
     display: inline-block;
     font-family: $sans-serif;
-    font-size: .7em;
+    font-size: .9em;
     font-weight: 600;
     margin-bottom: 2em;
     padding: .1em 0;

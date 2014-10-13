@@ -24,10 +24,6 @@ Template Name: home-template
   <label for="modal-1" style="display: inline">
     <button class="btn js-btn">Join Now</button>
   </label>
-
-      <!--
-      <button>Join Now</button>
-      -->
     </div>
   </div>
 </div>
@@ -41,25 +37,7 @@ Template Name: home-template
       <label class="modal-close" for="modal-1"></label>
         <h1 id="form_elements">Become A Member</h1>
 
-  <fieldset>
-    <form>   
-      <p><label for="text_field">Text Field:</label>
-        <input id="text_field" type="text"></p>
-
-      <p><label for="text_area">Text Area:</label>
-        <textarea id="text_area"></textarea></p>
-
-      <p><label for="password">Password:</label>
-        <input class="password" name="password" type="password">
-      </p>
-
-      <p><label for="file">File Input:</label>
-        <input class="file" name="file" type="file">
-      </p>
-      <p><input class="button" value="Submit" type="submit"></p>
-    </form>
-  </fieldset>
-
+        <?php ninja_forms_display_form( 1 ); ?>
     </div>
   </div>
 </div>
@@ -69,8 +47,7 @@ Template Name: home-template
   <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <p class="type">Home</p>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('main'); ?>>
           <header class="entry-header">
             <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
             <div class="entry-thumbnail">
@@ -79,6 +56,25 @@ Template Name: home-template
             <?php endif; ?>
 
             <h1 class="entry-title"><?php the_title(); ?></h1>
+                <div class="entry-meta">
+      <span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
+    </div>
+
+    <div class="entry-meta">
+      <?php
+        if ( 'post' == get_post_type() )
+          twentyfourteen_posted_on();
+
+        if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
+      ?>
+      <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyfourteen' ), __( '1 Comment', 'twentyfourteen' ), __( '% Comments', 'twentyfourteen' ) ); ?></span>
+      <?php
+        endif;
+
+        edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
+      ?>
+    </div><!-- .entry-meta -->
+
           </header><!-- .entry-header -->
 
           <div class="entry-content">

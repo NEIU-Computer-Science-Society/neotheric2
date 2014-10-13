@@ -1,19 +1,24 @@
-.hero {
+// variables
   //$hero-background-top: darken($base-accent-color, 25); 
   //$hero-background-bottom: adjust-hue($hero-background-top, -70);
   $hero-background-top: darken($light-gray, 25); 
   $hero-background-bottom: adjust-hue($hero-background-top, 25);
-
+  $hero-image-url : "http://www.bitnics.com/CSS/Example/img/serenity.jpg";
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image: "img/serenity.jpg";
 
-  @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
-
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  padding-bottom: 4em;
+.hero {
+    @include background(url($hero-image-url), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding-bottom: 4em;
+    min-height: 95%;
+    padding-top: 5%;
 
   .hero-logo img {
     margin-top: 2em;
@@ -32,37 +37,35 @@
       @include button(simple, $base-body-color);
       font-size: $base-font-size;
       outline: none;
+      margin-bottom: 22px;
     }
 
     .hero-copy {
+      @include background(linear-gradient(black, $dark-gray) left repeat);
       text-align: center;
-      
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='$dark-gray',GradientType=0 );
+      opacity: 0.9;
+      border-radius: 5px;
+      padding: 10px;     
+          
       h1 {
-        font-size: 1.6em;
+        font-size: 1.8em;
         margin-bottom: .5em;
-
-        @include media($large-screen) {
-          font-size: 1.8em;
-        }
+        color: lighten($light-gray, 20);
+        font-size: 2.5em !important;
+        text-shadow: 3px 3px black;
       }
 
       p {
         font-family: $serif;
-        margin: auto;
-        margin-bottom: 3em; 
         font-weight: 200;
         line-height: 1.4em;
-
-        @include media($large-screen) {
-          font-size: 1.1em;
-          max-width: 40%;
-        }
+        font-size: 1.1em;
+        text-shadow: 3px 3px black;
+        margin: auto;
+        margin-bottom: 3em; 
+        max-width: 40%;
       }
-    }
-
-    .modal-inner {
-      font-family: $serif;
-      text-shadow: none;
     }
   }
 }
