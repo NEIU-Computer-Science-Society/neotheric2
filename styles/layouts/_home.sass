@@ -1,11 +1,15 @@
 html, body
+	width: 100%
 	height: 100%
+	margin: 0px
+	padding: 0px
 
 article
-	+outer-container
-	+row	
-	+span-columns(8)
-	+shift(1.5)
+	//+outer-container
+	//+row	
+	//+span-columns(12)
+	+fill-parent()
+	//+shift(2)
 
 	header.page-title
 		margin-top: 5.5em
@@ -118,6 +122,9 @@ aside
 	padding: .1em 0
 	text-align: left
 	text-transform: uppercase
+
+.entry-title
+	margin-top: 1em
 	
 footer
 	+span-columns(12)
