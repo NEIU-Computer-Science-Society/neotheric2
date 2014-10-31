@@ -1,11 +1,22 @@
 <?php get_header(); ?>
+<?php
+global $query_string;
 
+$query_args = explode("&", $query_string);
+$search_query = array();
+
+foreach($query_args as $key => $string) {
+	$query_split = explode("=", $string);
+	$search_query[$query_split[0]] = urldecode($query_split[1]);
+} // foreach
+
+$search = new WP_Query($search_query);
+?>
 <!--BEGIN: Content-->
 <div class="content-main clear-fix" role="main">
-	
-	<header>
+	<article>	
 		<h1>Search Results</h1>
-	</header>
+
 	
 	<?php
 	
@@ -29,13 +40,12 @@
 
 				<?php endif; ?>
 				<!--END: Large Thumbnail-->
-				
+				<br />
 				<!--BEGIN: Excerpt-->
 				<span class="entry">
 					<?php the_excerpt("Continue reading &rarr;"); ?>
 				</span>
-				<!--END: Excerpt-->
-						
+				<!--END: Excerpt-->	
 			</a>
 		<!--END: List Item-->
 		</div>	
@@ -49,15 +59,12 @@
 		<?php else : // if no posts were found give the warning below ?>
 
 		<div class="post sys error">
-			<p>Nothing Found, there seems to be something wrong... Try searching instead:</p>
+			<p>Nothing Found, there seems to be something wrong... </p>
 			<?php get_search_form(); ?>
-		
-			<h2>Topics of Interest</h2>
-			<p><?php wp_tag_cloud(''); ?></p>
 		</div>
 		
 	<?php endif; //END: The Loop ?>
-
+	</article>
 </div>
 <!--END: Content-->
 

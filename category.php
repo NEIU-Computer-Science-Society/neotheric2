@@ -1,9 +1,8 @@
 <?php get_header(); ?>
 
 <!--BEGIN: Content-->
-<div class="content-main clear-fix" role="main">
-	<article>
-		<p class="type"><?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?></p>
+	<article class="category">
+		<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
 	<?php if (have_posts()) : ?>
 		
 		<h1><?php single_cat_title(); ?></h1>
