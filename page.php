@@ -4,12 +4,13 @@ get_header();
 <article class="page">
 	<header class="page-title">
 			<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
-
+		<div class=".tlt">
 		<h1><?php the_title(); ?></h1>
+		</div>
 	</header>
 	
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-	<div class="post">
+	<div class="page-content">
 		<?php the_content(); ?>
 	</div>
 	

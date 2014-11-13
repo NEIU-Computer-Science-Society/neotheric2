@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
 
 
 /* ::: MOVE LABELS INTO INPUTS IN FORMS ::::::::::::::::::::::::::::::::: */
-	
+/*	
 	// Detect support for placeholder attribute
 	placeholderSupport = ("placeholder" in document.createElement("input"));
 	

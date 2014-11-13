@@ -37,10 +37,9 @@
 	
 	<!--REMOVE this viewport code if you are making a site that is NOT responsive-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
  	
 	<?php wp_head(); // wp_head hook for Plugins ~ always keep this just before the /head tag ?>
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	</head>
 	<body>
 		<!-- Start of the Navigation Bar -->

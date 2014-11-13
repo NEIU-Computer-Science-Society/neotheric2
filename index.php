@@ -10,7 +10,7 @@
 			<article <?php post_class('clear-fix'); ?>>
 				
 				<h1><?php the_title(); ?></h1>
-				
+				<h2><?php the_time('F jS, Y'); ?> by <?php the_author_posts_link(); ?></h2>
 				<?php the_content(); ?>
 			
 			</article>
