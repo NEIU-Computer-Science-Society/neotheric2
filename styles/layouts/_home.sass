@@ -16,17 +16,17 @@ article
 
 	h1 
 		font-family: $serif
-		font-size: 1.6em
+		//font-size: 1.6em
 		font-weight: 400
 		margin-bottom: .6em
-		border-bottom: 2px solid $dark-gray
+		border-bottom: 3px solid lighten($dark-gray, 20)
 
 		+media($medium-screen) 
 		font-size: 2.4em
 	 
 	h2 
 		font-family: $sans-serif
-		font-size: 1.1em
+		//font-size: 1.1em
 		font-weight: 400
 		line-height: 1.5em
 		margin-bottom: 1.2em
@@ -89,7 +89,6 @@ article
 	p.author 
 		font-family: $serif
 
-
 aside
 	+span-columns(3)
 	+omega
@@ -125,7 +124,28 @@ aside
 
 .entry-title
 	margin-top: 1em
-	
+
+.ai1ec-calendar-toolbar .dropdown:hover > .dropdown-menu
+	display: block
+
+.panel
+	//background-color: lighten($dark-gray, 75)
+	background-color: #fff8dc
+	color: $dark-gray
+	@include box-sizing(border-box)
+	padding: .4em
+	border: 1px solid #ddd
+	margin: 1em
+
+.table.ai1ec-calendar-toolbar
+	display: none
+
++media($small-screen)
+	#off-canvas-link
+		display: none
++media($medium-screen-up)
+	#off-canvas-link
+		display: inline
 footer
 	+span-columns(12)
 	+omega

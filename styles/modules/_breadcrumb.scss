@@ -10,12 +10,12 @@ $base-spacing: 1em;
   $breadcrumb-color-hover: $base-accent-color;
   $breadcrumb-color-active: $breadcrumb-color;
 
-  @include inline-block;
+  //@include inline-block;
   text-align: left;
   margin-bottom: $base-spacing;
 
   a {
-    @include inline-block;
+    //@include inline-block;
     background-color: $breadcrumb-background;
     border: $breadcrumb-border;
     color: $breadcrumb-color;

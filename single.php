@@ -1,10 +1,8 @@
 <?php get_header(); ?>
-
-<div class="content-main" role="main">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
 	<!--BEGIN: Single Post-->
-	<article>
+	<article class="single">
 				
 		<header class="page-title">
 			<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
@@ -53,8 +51,6 @@ if ($disableSidebar !== 'true'): ?>
 	<h2>No posts were found :(</h2>
 	
 <?php endif; //END: The Loop ?>
-		
-</div>
 <!--END: Content-->
 
 <?php get_footer(); ?>

@@ -211,4 +211,9 @@ function register_the_menu() {
 }
 add_action( 'init', 'register_the_menu' );
 
+// Make shortcodes work in sidebar widgets
+
+add_filter('widget_text', 'do_shortcode');
+
+
 ?>

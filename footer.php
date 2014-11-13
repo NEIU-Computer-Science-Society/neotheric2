@@ -39,18 +39,8 @@
 		</div>
 		<div class="js-menu-screen menu-screen"></div>
 		<!-- End of Off-Canvas Navigation -->
-		
-		<!-- Start of Modal Content -->
 
 		<!-- start of javascript -->
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		
-		<!-- code for searchbar -->
-		<script src="<?php bloginfo('template_directory');  ?>/js/classie.js"></script>
-		<script src="<?php bloginfo('template_directory');  ?>/js/uisearch.js"></script>
-		<script>
-			new UISearch( document.getElementById( 'sb-search' ) );
-		</script>
 
 		<!-- code for modal -->
 		<script>
@@ -112,5 +102,6 @@
 			  });
 			});
 		</script>
+		<?php wp_footer();?>
 	</body>
 </html>

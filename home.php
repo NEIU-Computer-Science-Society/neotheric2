@@ -35,15 +35,15 @@ Template Name: home-template
   <div class="modal-window">
     <div class="modal-inner">
       <label class="modal-close" for="modal-1"></label>
-        <h1 id="form_elements">Become A Member</h1>
+        <?php echo do_shortcode('[wpgform id=299]');?>
 
-        <?php ninja_forms_display_form( 1 ); ?>
     </div>
   </div>
 </div>
 
-
-<i class="fa fa-chevron-circle-right fa-3x js-menu-trigger sliding-menu-button"></i>
+<div id="off-canvas-link">
+  <i class="fa fa-chevron-circle-right fa-3x js-menu-trigger sliding-menu-button"></i>
+</div>
   <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
