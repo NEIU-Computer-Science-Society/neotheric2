@@ -1,20 +1,8 @@
 <?php get_header(); ?>
 
-<!--BEGIN: sidebar~main-->
-<?php // to disable this sidebar on a page by page basis just add a custom field to your page or post of disableSidebar = true
-$disableSidebar = get_post_meta($post->ID, 'disableSidebar', $single = true);
-if ($disableSidebar !== 'true'): ?>
-
-<aside class="sidebar-main">
-	<h1>Main Sidebar</h1>
-	<?php dynamic_sidebar('sidebar-main'); ?>
-</aside>
-
-<?php endif; ?>
-<!--END: sidebar~main-->
-
 <!--BEGIN: Content-->
-<div class="content-main" role="main">
+<article class="archive">
+	<header class="page-title">
 	<?php if (have_posts()) : ?>
 
 		<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -38,37 +26,40 @@ if ($disableSidebar !== 'true'): ?>
 		<h1 class="page-title">Author Archive</h1>
 
 		<?php elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : // If this is a paged archive ?>
-		<h1 class="page-title">Blog Archives</h1>
-
-		<?php endif; ?>
+		<h1 class="page-title">Events Archive Page <?php echo $_GET['paged']; ?></h1>
 		
+		<?php else : ?>
+		<h1>Events</h1>
+		<?php endif; ?>
+
 		<?php while (have_posts()) : the_post(); ?>
-
+	</header>
 		<!--BEGIN: Archive-->
-		<article <?php post_class(); ?>>
-						
-			<h2 class="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+		<div <?php post_class(); ?>>
+			<div class="panel">			
+				<h2 class="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				
+				<!-- <small><?php the_time('l, F jS, Y') ?></small> Disable Comment if you want to display the post date -->
+
+				<div class="entry">
+					<?php the_content() ?>
+				</div>
 			
-			<small><?php the_time('l, F jS, Y') ?></small>
-
-			<div class="entry">
-				<?php the_content() ?>
-			</div>
-
 			<?php if(!is_tag()): // don't show this stuff on tag pages '?>
 			<!--BEGIN: Post Meta Data-->
-			<footer class="post-meta-data">
+			<div class="post-meta-data">
 				<ul class="no-bullet">
-					<li class="add-comment"><?php comments_popup_link('Share your comments', '1 Comment', '% Comments'); ?></li>
-					<li>Posted in <?php the_category(', ') ?></li>
+					<li class="add-comment"><?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></li>
+					<!--<li>Posted in <?php the_category(', ') ?></li>  Uncomment if you want to show the category -->
 					<li><?php edit_post_link('[Edit]', '<small>', '</small>'); ?></li>
 					<li><?php the_tags('Tags: ', ', ', '<br />'); ?></li>
 				</ul>
-			</footer>
+			</div>
 			<!--END: Post Meta Data-->
 			<?php endif; ?>
+			</div>
 			
-		</article>
+		</div>
 		<!--END: Archive-->
 				
 		<?php endwhile; ?>
@@ -76,10 +67,11 @@ if ($disableSidebar !== 'true'): ?>
 		<!--BEGIN: Page Nav-->
 		<?php if ( $wp_query->max_num_pages > 1 ) : // if there's more than one page turn on pagination ?>
 	        <nav class="page-nav">
-	        	<h1 class="hide">Page Navigation</h1>
 		        <ul class="clear-fix">
-			        <li class="prev-link"><?php next_posts_link('Next Page') ?></li>
-			        <li class="next-link"><?php previous_posts_link('Previous Page') ?></li>
+			        <li class="prev-link"><?php previous_posts_link('<i class="fa fa-arrow-circle-left fa-4x"></i>
+') ?></li>
+			        <li class="next-link"><?php next_posts_link('<i class="fa fa-arrow-circle-right fa-4x"></i>
+') ?></li>
 		        </ul>
 	        </nav>
 		<?php endif; ?>
@@ -90,6 +82,20 @@ if ($disableSidebar !== 'true'): ?>
 			<h2>No posts were found :(</h2>
 			
 	<?php endif; //END: The Loop ?>
+	
+	</article>
+	
+	<!--BEGIN: sidebar~main-->
+<?php // to disable this sidebar on a page by page basis just add a custom field to your page or post of disableSidebar = true
+$disableSidebar = get_post_meta($post->ID, 'disableSidebar', $single = true);
+if ($disableSidebar !== 'true'): ?>
+
+<aside class="sidebar-main">
+	<?php dynamic_sidebar('sidebar-main'); ?>
+</aside>
+
+<?php endif; ?>
+<!--END: sidebar~main-->
 
 </div>
 <!--END: Content-->

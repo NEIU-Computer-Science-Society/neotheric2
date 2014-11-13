@@ -1,13 +1,11 @@
 <?php get_header(); ?>
-
-<div class="content-main" role="main">
-	
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
 	<!--BEGIN: Single Post-->
-	<article <?php post_class('clear-fix'); ?>>
+	<article class="single">
 				
-		<header>
+		<header class="page-title">
+			<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
 			<h1><?php the_title(); ?></h1>	
 			<time datetime="<?php the_time('c'); ?>" pubdate="pubdate"><?php the_time('F jS, Y'); ?></time>
 			<p>by <?php the_author(); ?></p>
@@ -53,8 +51,6 @@ if ($disableSidebar !== 'true'): ?>
 	<h2>No posts were found :(</h2>
 	
 <?php endif; //END: The Loop ?>
-		
-</div>
 <!--END: Content-->
 
 <?php get_footer(); ?>

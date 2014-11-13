@@ -7,7 +7,6 @@
 		</fieldset>
 		</form>
 -->
-
 		        	<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
 				        <input type="search" placeholder="Enter Search" value="<?php the_search_query(); ?>" name="s" id="s" accesskey="s" tabindex="1" />
 				        <input type="hidden" value="post" name="post_type" id="post_type" />
