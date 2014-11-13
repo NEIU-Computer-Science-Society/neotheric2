@@ -16,14 +16,14 @@ Each sub-directory of the styles folder contains a "foldername_dir.sass" file th
 
 syles sub-directory contents
 =====================
-- layouts:  contains layouts for each page template being used in the wordpress theme.
+- layouts directory:  contains layouts for each corresponding wordpress template being used in the wordpress theme.
   (ex) _home.sass is for the home.php page
-  (ex) _category.sass is for the _category.sass is for the category.php page
+  (ex) _category.sass is for the category.php page
 
-- modules:  contains partial stylesheets for specific page components.
+- modules directory:  contains partial stylesheets for individual page components.
   (ex) _topnav.scss contains all of the styling for the top navigation bar.
   (ex) _footer.scss contains all of the styling for the footer.
 
-- plugins:  contains all of the framework plugins being used in the theme.
+- plugins directory:  contains all of the framework plugins being used in the theme.
   (ex) bourbon directory contains the bourbon framework
   (ex) neat directory contains the grid framework
