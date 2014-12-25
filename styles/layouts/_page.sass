@@ -1,0 +1,23 @@
+.page
+	article
+		+media($small-screen)
+			+span-columns(12)
+			+omega()
+
+		+media($large-screen)
+			+span-columns(7)
+			+shift(1)
+	aside
+		+media($small-screen)
+			+pad()
+			+span-columns(12)
+			+omega()
+		+media($large-screen)
+			margin-top: 10em
+			+span-columns(3)
+			+omega()
+
+
+	.page-content
+		height: 100vh
+		overflow: auto
