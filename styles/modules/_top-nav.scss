@@ -179,7 +179,7 @@ header.navigation {
       }      
     }
 
-    &:hover > .submenu {
+    &:hover > .sub-menu {
       display: block;
     }
 
@@ -189,7 +189,7 @@ header.navigation {
     }
   }
 
-  ul.submenu {
+  ul.sub-menu {
     display: none;
     padding-left: 0;
 
@@ -199,7 +199,7 @@ header.navigation {
       top: 1.5em;
     }
 
-    .submenu {
+    .sub-menu {
       @include media($horizontal-bar-mode) {
         left: $navigation-submenu-width - .2em;
         top: 0;
@@ -216,6 +216,7 @@ header.navigation {
         &:first-child > a {
           border-top-left-radius: $base-border-radius;
           border-top-right-radius: $base-border-radius;
+          
         }
 
         &:last-child > a {

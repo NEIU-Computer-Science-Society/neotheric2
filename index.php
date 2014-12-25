@@ -1,19 +1,27 @@
 <?php get_header(); ?>
 
 <!--BEGIN: Default Content Section-->
-<div class="white-section clear-fix" role="main">
-	
+	<article class="index">
+	<header class="page-title">
+						<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(array('last_link' => true, 'separator' => '', 'wrapper_element' => div, 'wrapper_class' => breadcrumb, 'wrapper_id' => breadcrumb)); } ?>
+		<div class=".tlt">
+		<h1>Events</h1>
+		</div>
+	</header>
 	<?php if (have_posts()) : // BEGIN THE LOOP ?>
 
 		<?php while (have_posts()) : the_post(); //LOOPING through all the posts, we split onto two lines for clean indentation ?>
 
-			<article <?php post_class('clear-fix'); ?>>
+			<!--BEGIN: Post-->
+			<div <?php post_class() ?> class="post-<?php the_ID(); ?>">
+				<div class="panel">
+				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title='Click to read: "<?php strip_tags(the_title()); ?>"'><?php the_title(); ?></a></h2>
 				
-				<h1><?php the_title(); ?></h1>
-				<h2><?php the_time('F jS, Y'); ?> by <?php the_author_posts_link(); ?></h2>
-				<?php the_content(); ?>
-			
-			</article>
+				<p><?php the_tags('Topics Covered: ', ', ', '<br />'); ?></p>
+				<p><?php the_excerpt("Continue reading &rarr;"); ?></p>
+				</div>
+			</div>
+			<!--END: Post-->			
 
 		<?php wp_link_pages(); //this allows for multi-page posts ?>
 				
@@ -36,8 +44,8 @@
 		<h2>No posts were found :(</h2>
 
 	<?php endif; //END: The Loop ?>
-	
-</div>
+	</div>
+</article>
 <!--END: Default Layout-->
 
 <!--BEGIN: Sidebar Main-->

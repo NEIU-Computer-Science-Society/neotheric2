@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	
+	<div class="single">
 	<!--BEGIN: Single Post-->
-	<article class="single">
+	<article>
 				
 		<header class="page-title">
-			<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
+						<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(array('last_link' => true, 'separator' => '', 'wrapper_element' => div, 'wrapper_class' => breadcrumb, 'wrapper_id' => breadcrumb)); } ?>
 			<h1><?php the_title(); ?></h1>	
 			<time datetime="<?php the_time('c'); ?>" pubdate="pubdate"><?php the_time('F jS, Y'); ?></time>
 			<p>by <?php the_author(); ?></p>
@@ -34,10 +34,10 @@
 $disableSidebar = get_post_meta($post->ID, 'disableSidebar', $single = true);
 if ($disableSidebar !== 'true'): ?>
 
-<div class="sidebar-main">
+<aside>
 	
 	<?php dynamic_sidebar('sidebar-main'); ?>
-</div>
+</aside>
 
 <?php endif; ?>
 <!--END: sidebar~main-->
@@ -52,5 +52,5 @@ if ($disableSidebar !== 'true'): ?>
 	
 <?php endif; //END: The Loop ?>
 <!--END: Content-->
-
+</div>
 <?php get_footer(); ?>

@@ -5,11 +5,13 @@ html, body
 	padding: 0px
 
 article
-	//+outer-container
+	+outer-container
 	//+row	
 	//+span-columns(12)
 	+fill-parent()
 	//+shift(2)
+	margin-bottom: 2em
+	padding: 1em
 
 	header.page-title
 		margin-top: 5.5em
@@ -19,7 +21,7 @@ article
 		//font-size: 1.6em
 		font-weight: 400
 		margin-bottom: .6em
-		border-bottom: 3px solid lighten($dark-gray, 20)
+		border-bottom: 3px solid lighten($dark-gray, 5)
 
 		+media($medium-screen) 
 		font-size: 2.4em
@@ -89,10 +91,6 @@ article
 	p.author 
 		font-family: $serif
 
-aside
-	+span-columns(3)
-	+omega
-
 .nav-link 
 	font-family: $sans-serif
 
@@ -130,15 +128,27 @@ aside
 
 .panel
 	//background-color: lighten($dark-gray, 75)
-	background-color: #fff8dc
+	background-color: #D1E6E7
 	color: $dark-gray
 	@include box-sizing(border-box)
 	padding: .4em
-	border: 1px solid #ddd
-	margin: 1em
+	border: 1px dotted #93A8A9
+	margin-left: 2em
+	margin-right: 2em
+	margin-bottom: 4em
+ 
 
 .table.ai1ec-calendar-toolbar
 	display: none
+
+.entry-title
+	display: none !important
+
+div.ss-form-entry > input
+	width: 80% !important
+
+div.ss-form-entry > textarea
+	width: 80% !important
 
 +media($small-screen)
 	#off-canvas-link

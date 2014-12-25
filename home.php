@@ -19,7 +19,7 @@ Template Name: home-template
         <a href="" class="hero-logo"><img src="<?php bloginfo('template_directory');  ?>/img/css_logo_transparent.png" alt=""></a>
       <h1>Computer Science Society</h1>
       <p>As the NEIU ACM chapter, we welcome all NEIU students interested in computer science to establish a community of future Computer Science Rockstars.</p>  
-      <button>Learn More</button>
+      <button id="learn-more">Learn More</button>
 
   <label for="modal-1" style="display: inline">
     <button class="btn js-btn">Join Now</button>
@@ -35,7 +35,7 @@ Template Name: home-template
   <div class="modal-window">
     <div class="modal-inner">
       <label class="modal-close" for="modal-1"></label>
-        <?php echo do_shortcode('[wpgform id=299]');?>
+        <?php echo do_shortcode('[wpgform id=420]');?>
 
     </div>
   </div>
@@ -47,7 +47,7 @@ Template Name: home-template
   <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class('main'); ?>>
+        <article id="post-<?php the_ID(); ?>">
           <header class="entry-header">
             <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
             <div class="entry-thumbnail">

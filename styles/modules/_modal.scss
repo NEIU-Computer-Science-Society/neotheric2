@@ -1,7 +1,7 @@
 .modal {
   $modal-padding: 3em;
   $modal-background: $base-background-color;
-  $modal-close-color: $light-gray;
+  $modal-close-color: $dark-gray;
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
 
@@ -76,12 +76,12 @@
     border-radius: $base-border-radius;
     background: $modal-background;
     margin: auto;
-    max-height: 95%;
+    max-height: 100%;
     position: relative;
     overflow: auto;
     width: 95%;
+    min-height: 98%;
     padding: $modal-padding /2;
-    margin-top: .6em;
 
     @include media($medium-screen) {
       padding: $modal-padding;
@@ -92,7 +92,7 @@
 
     @include media($large-screen) {
       width: 50%;
-      margin-top: 10em;
+      margin-top: .5em;
     }
 
     h1 {

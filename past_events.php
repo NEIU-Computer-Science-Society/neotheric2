@@ -1,26 +1,19 @@
 <?php
-global $query_string;
-
-$query_args = explode("&", $query_string);
-$search_query = array();
-
-foreach($query_args as $key => $string) {
-	$query_split = explode("=", $string);
-	$search_query[$query_split[0]] = urldecode($query_split[1]);
-} // foreach
-
-$search = new WP_Query($search_query);
-?>
-<?php get_header(); ?>
-<!--BEGIN: Content-->
+/* Template Name: Past events
+*/
+get_header(); 
+query_posts( 'cat=4' ); ?>?>
 
 	<article class="category">
-		<header class="page-title">
-					<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(array('last_link' => true, 'separator' => '', 'wrapper_element' => div, 'wrapper_class' => breadcrumb, 'wrapper_id' => breadcrumb)); } ?>
-			<h1>Search Results</h1>
-		</header>	
+		<!--BEGIN: Content-->
 		<?php if (have_posts()) : ?>
-	
+
+		<header class="page-title">
+						<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(array('last_link' => true, 'separator' => '', 'wrapper_element' => div, 'wrapper_class' => breadcrumb, 'wrapper_id' => breadcrumb)); } ?>
+			<h1>Past Events</h1>
+		</header>		
+		<!--<h1><?php single_cat_title(); ?></h1>-->
+
 		<?php while (have_posts()) : the_post(); ?>
 
 			<!--BEGIN: Post-->
@@ -47,13 +40,12 @@ $search = new WP_Query($search_query);
 		        </nav>
 			<?php endif; ?>
 			<!--END: Page Nav-->
-			
+	</article>			
 		<?php else : ?>
 
 			<h2>No posts were found :(</h2>
 
 	<?php endif; //END: The Loop ?>
-	</article>
 <!--BEGIN: sidebar~main-->
 <?php // to disable this sidebar on a page by page basis just add a custom field to your page or post of disableSidebar = true
 $disableSidebar = get_post_meta($post->ID, 'disableSidebar', $single = true);
@@ -65,6 +57,9 @@ if ($disableSidebar !== 'true'): ?>
 
 <?php endif; ?>
 <!--END: sidebar~main-->
+
+
+</div>
 <!--END: Content-->
 
 <?php get_footer(); ?>

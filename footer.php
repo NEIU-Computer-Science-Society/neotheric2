@@ -1,29 +1,31 @@
 		<!-- Start of Footer -->
 		<footer class="footer">
 		  <div class="footer-logo">
-		    <img src="img/acm.png" alt="">
+		    <img src="<?php bloginfo('template_directory');  ?>/img/acm_chapter_sym-hires.png" alt="">
 		  </div>
 		  <div class="footer-links">
 		    <ul>
 		      <li><h3>Content</h3></li>
-		      <li><a href="javascript:void(0)">About</a></li>
-		      <li><a href="javascript:void(0)">Contact</a></li>
-		      <li><a href="javascript:void(0)">Resources</a></li>
+		      <li><a href="http://neiu.acm.org/about/">About</a></li>
+		      <li><a href="http://neiu.acm.org/contact/">Contact</a></li>
+		      <li><a href="http://neiu.acm.org/resources/">Resources</a></li>
 		    </ul>
 		    <ul>
 		      <li><h3>Follow Us</h3></li>
-		      <li><a><i class="fa fa-facebook fa-3x"></i></a> <a><i class="fa fa-github fa-3x"></i></a> <a><i class="fa fa-youtube fa-3x"></i></a></li>
+		      <li><a href="https://www.facebook.com/acm.neiu"><i class="fa fa-facebook fa-3x"></i></a>
+		      	<a href="https://github.com/neiucss"><i class="fa fa-github fa-3x"></i></a>
+		      	<a><i class="fa fa-youtube fa-3x"></i></a></li>
 		    </ul>
 		    <ul>
 		      <li><h3>Legal</h3></li>
-		      <li><a href="javascript:void(0)">Our Constitution</a></li>
-		      <li><a href="javascript:void(0)">Privacy Policy</a></li>
+		      <li><a href="http://neiu.acm.org/constitution">Our Constitution</a></li>
+		      <li><a href="http://neiu.acm.org/privacy-policy/">Privacy Policy</a></li>
 		    </ul>
 		  </div>
 
 		  <hr>
 
-		  <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+		  
 		</footer>
 		<!-- end of Footer -->
 		
@@ -41,7 +43,7 @@
 		<!-- End of Off-Canvas Navigation -->
 
 		<!-- start of javascript -->
-
+		
 		<!-- code for modal -->
 		<script>
 			$(document).ready(function() {
@@ -102,6 +104,12 @@
 			  });
 			});
 		</script>
+
+		<script type="text/javascript">
+    		document.getElementById("learn-more").onclick = function () {
+        	location.href = "http://neiu.acm.org/about-us";
+    	};
+</script>
 		<?php wp_footer();?>
 	</body>
 </html>

@@ -85,13 +85,13 @@
         if ( !is_admin() && !is_login_page() ) {
             // jQuery
             // To use our local copy (if you don't have an internet connection and you're developing locally) you can uncomment these two lines
-                //wp_deregister_script( 'jquery' );
-                //wp_register_script( 'jquery', '/wp-includes/js/jquery/jquery.js',null,null,true);
+                wp_deregister_script( 'jquery' );
+                wp_register_script( 'jquery', '/wp-includes/js/jquery/jquery.js',null,null,true);
                 wp_enqueue_script( 'jquery' );
 
             // functions
-                wp_register_script( 'functions', get_template_directory_uri().'/js/functions.js', array('jquery'),'1.1', true); // true loads this script in the footer
-                wp_enqueue_script( 'functions' );
+                //wp_register_script( 'functions', get_template_directory_uri().'/js/functions.js', array('jquery'),'1.1', true); // true loads this script in the footer
+                //wp_enqueue_script( 'functions' );
 
             // modernizr
                 wp_register_script( 'modernizr', get_template_directory_uri().'/js/modernizr.custom.js',null,null,false); // keep the last argument as false which loads modernizr in the head

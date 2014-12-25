@@ -1,4 +1,18 @@
 .single
-	+span-columns(6)
-	+shift(1.5)
-	margin-bottom: 2em
+	article
+		+media($small-screen)
+			+span-columns(12)
+			+omega()
+
+		+media($large-screen)
+			+span-columns(7)
+			+shift(1)
+	aside
+		+media($small-screen)
+			+pad()
+			+span-columns(12)
+			+omega()
+		+media($large-screen)
+			margin-top: 10em
+			+span-columns(3)
+			+omega()

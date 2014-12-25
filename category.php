@@ -6,7 +6,7 @@
 		<?php if (have_posts()) : ?>
 
 		<header class="page-title">
-			<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(); } ?>
+						<?php if (function_exists('HAG_Breadcrumbs')) { HAG_Breadcrumbs(array('last_link' => true, 'separator' => '', 'wrapper_element' => div, 'wrapper_class' => breadcrumb, 'wrapper_id' => breadcrumb)); } ?>
 			<h1><?php single_cat_title();?></h1>
 		</header>		
 		<!--<h1><?php single_cat_title(); ?></h1>-->
@@ -54,9 +54,6 @@ if ($disableSidebar !== 'true'): ?>
 
 <?php endif; ?>
 <!--END: sidebar~main-->
-
-
-</div>
 <!--END: Content-->
 
 <?php get_footer(); ?>
